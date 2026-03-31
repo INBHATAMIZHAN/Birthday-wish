@@ -1,0 +1,49 @@
+// ===============================================================
+// Assumed Data Model
+// ===============================================================
+//
+// Collection: photos
+// Document ID: auto-generated
+// Fields:
+//   - url: string (required, URL format) - The URL of the photo
+//   - createdAt: timestamp (required) - When the photo was added
+//   - addedBy: string (required) - UID of the user who added it
+//
+// ===============================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper Functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isValidPhoto(data) {
+      return data.keys().hasAll(['url', 'createdAt', 'addedBy']) &&
+             data.keys().hasOnly(['url', 'createdAt', 'addedBy']) &&
+             data.url is string &&
+             data.url.size() < 1000 &&
+             data.createdAt is timestamp &&
+             data.addedBy == request.auth.uid;
+    }
+
+    match /photos/{photoId} {
+      // Allow anyone to read the gallery photos
+      allow read: if true;
+      
+      // Only authenticated users can add photos
+      allow create: if isAuthenticated() && isValidPhoto(request.resource.data);
+      
+      // Only the person who added the photo can delete it
+      allow delete: if isAuthenticated() && request.auth.uid == resource.data.addedBy;
+      
+      // No updates allowed for now
+      allow update: if false;
+    }
+
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}

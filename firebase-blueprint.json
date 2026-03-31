@@ -1,0 +1,32 @@
+{
+  "entities": {
+    "Photo": {
+      "title": "Photo",
+      "description": "A photo in the gallery",
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "The URL of the photo"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The time the photo was added"
+        },
+        "addedBy": {
+          "type": "string",
+          "description": "The UID of the user who added the photo"
+        }
+      },
+      "required": ["url", "createdAt", "addedBy"]
+    }
+  },
+  "firestore": {
+    "/photos/{photoId}": {
+      "schema": "Photo",
+      "description": "Collection of gallery photos"
+    }
+  }
+}
