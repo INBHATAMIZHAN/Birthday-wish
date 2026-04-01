@@ -853,8 +853,8 @@ export default function App() {
   const MUSIC_URLS = {
     login: "https://www.masstamilan.dev/downloader/4Qvcd34-tre2Bj-fEBtgig/1775012287/d128_cdn/16979/MjQwMTo0OTAwOjYzNDA6ZDlmMjpiMDRiOjIwOTQ6Y2U2YTo0MmVl", // Othaiyadi Pathayila
     cake: "https://www.masstamilan.dev/downloader/_hzfHvf_n5nw-JCtPMmDbQ/1775012244/d128_cdn/9707/MjQwMTo0OTAwOjYzNDA6ZDlmMjpiMDRiOjIwOTQ6Y2U2YTo0MmVl", // Celebration Start
-    memories: "https://www.masstamilan.dev/downloader/CUR03X7fGcPV7PwqH9xr1A/1774982128/d128_cdn/18351/MjQwOTo0MGY0OmFlOmYzMjU6ODAwMDo6", // Our Memories
-    gallery: "https://www.masstamilan.dev/downloader/FsZIvycVgFZW_VN8msB5lw/1774982103/d128_cdn/8385/MjAwMTo0ODYwOjc6ODA1OjplNg==", // Gallery Moments
+    memories: "https://www.masstamilan.dev/downloader/HQtVLmxHf9HIBQf0-NfK0g/1775013365/d128_cdn/18351/MjAwMTo0ODYwOjc6NTA1OjpmMw==", // Our Memories
+    gallery: "https://www.masstamilan.dev/downloader/vvrFcNCwVOJdtfymEJUGsw/1775013307/d128_cdn/8385/MjAwMTo0ODYwOjc6ODA2OjpkOA==", // Gallery Moments
     birthday: "https://www.masstamilan.dev/downloader/hT1LW2GluN2_CoJNO5IZbA/1775012273/d128_cdn/9174/MjQwMTo0OTAwOjYzNDA6ZDlmMjpiMDRiOjIwOTQ6Y2U2YTo0MmVl", // Happy Birthday
   };
 
